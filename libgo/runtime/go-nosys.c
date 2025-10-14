@@ -28,11 +28,11 @@
 #include <unistd.h>
 
 #ifndef HAVE_OFF64_T
-typedef signed int off64_t __attribute__ ((mode (DI)));
+typedef signed int off_t __attribute__ ((mode (DI)));
 #endif
 
 #ifndef HAVE_LOFF_T
-typedef off64_t loff_t;
+typedef off_t loff_t;
 #endif
 
 #ifndef HAVE_ACCEPT4
@@ -287,8 +287,8 @@ splice (int fd __attribute__ ((unused)),
 #ifndef HAVE_SYNC_FILE_RANGE
 int
 sync_file_range (int fd __attribute__ ((unused)),
-		 off64_t offset __attribute__ ((unused)),
-		 off64_t nbytes __attribute__ ((unused)),
+		 off_t offset __attribute__ ((unused)),
+		 off_t nbytes __attribute__ ((unused)),
 		 unsigned int flags __attribute__ ((unused)))
 {
   errno = ENOSYS;
